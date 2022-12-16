@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-image: url(images/skyy.png);
+            background-size: cover;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        #wrap {
+            height: 1500px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .popup {
+            background: #fff;
+            width: 300px;
+            height: 250px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+        }
+        h1 { 
+            padding: 20px;
+            text-align: center; 
+            color: rgb(70, 12, 227);
+        }
+        .popup ul {
+            list-style: none;
+        }
+        li {
+            padding: 5px 20px;
+        }
+
+        /* 공통 - 닫기 버튼 */
+        button {
+            position: absolute;
+            bottom: 0px;
+            right: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            font-size: 0.8em;  
+            /* 1em은 100%   0.8em은 80% */
+            width: 40px;
+            height: 26px;
+            border: none;
+            border-radius: 5px;
+            z-index: 900;
+            cursor: pointer;
+        }
+
+        #btn1 {
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            font-size: 0.8em;  
+            /* 1em은 100%   0.8em은 80% */
+            width: 40px;
+            height: 26px;
+            border: none;
+            border-radius: 5px;
+            z-index: 900;
+            cursor: pointer;
+        }
+        /* 첫번째 팝업 */
+        #notice {
+            position: absolute;
+            left: 150px;
+            top: 100px;
+            z-index: 100;
+            border: 1px solid rgb(2, 13, 53);
+            background: rgb(255, 216, 60);
+        }
+        /* 두번째 팝업 */
+        #notice2 {
+            position: absolute;
+            left: 500px;
+            top: 100px;
+            padding: 0;
+            margin: 0;
+            border: none;
+            z-index: 300;
+            width: 600px;
+            height: 850px;
+        }
+        .back {
+            position: absolute;
+            background: rgb(2, 13, 53);
+            width: 100%;
+            height: 35px;
+            bottom: -5px;
+        }
+        #btn2 {
+            position: absolute;
+            bottom: 0px;
+            right: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            font-size: 0.8em;  
+            /* 1em은 100%   0.8em은 80% */
+            width: 40px;
+            height: 26px;
+            border: none;
+            border-radius: 5px;
+            z-index: 900;
+            cursor: pointer;
+        }
+    </style>
+    <title>레이어 팝업창</title>
+</head>
+<body>
+    <div id="wrap">
+        <!-- <p>문서를 열면 레이어 팝업창이 그대로 보인다.</p> -->
+        <!-- pre : (띄어쓰기까지 적용하고싶을 때) 입력한 그대로 출력하는 태그 -->
+        <!-- <pre> 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Invenire fecerit, tribus docet scriptum, vacuitate, faciant gravissimis, ignorare terrore. Insidiarum statuat permagna distinctio improborum quoque dividendo nonne. Epicurei inquam, habendus caeco senectus bonis. Faciendumve solam parturient probes perdiderunt. Sentiant importari, parum iisque vester defendere convenire tua tantalo allevatio. Reprimique inculta, seiunctum torquatis nemini quandam noctesque publicam potiora quibusdam. Difficilius sol splendide defenditur gravissimo impendere multo mattis. 
+
+            Conferebamus laboriosam temperantia, reprehendunt gaudeat gerendarum saperet. Curiosi musicis, privavisse senectutem conficiuntque huic solvantur. Eruditionem arte, rogatiuncula numquidnam elegans honestum finiri magna, ulla certae illustribus. Adoptionem virtutibus priventur sapientium volunt. Nimis sensuum praeclaram pariter facimus praeter. 
+            
+            Ea oderis erant tenebo triario. Extremo nostras euismod philosophari, optabilem rudem p iisque sitisque rhoncus honeste. Carere est instructior etiam cogitarent ipsa poetis libidinosarum de alliciat. Vacillare velint arbitrer litora collegisti similia, m conversa viveremus dedocendi meque. Infinitum careat constantia iactant optime disputandum expediunt acutus gloriosis falsi. Congressus transferam vix labefactetur deorsum, contemnit torquem. Scribi denique, multoque eloquentiam salutatus vult intellegitur ornatum. Magnum finibus, perspecta discedere incurreret. 
+            
+            Philosophiae pertinax aptissimum probatum deteriora pater propter illustriora. Sumitur delectu latina affecti dissentiunt plura pariuntur de minuendas. Antiquitate plurimum videtis careat primisque rhoncus, amarissimam ignavi. Vexetur mirari probo putanda homines. Duxit porta praesenti ambigua homines diligenter iucunditas. Integer venandi modis impendet inciderit. Tertium suavitate horreat finitum novum responsum legendos ibidem exercitationem susceperant. Nullus iucundo dicitur fabellas triarius earum solemus aptent legere ineruditus. Censes temeritate dedecora vigiliae intellegi. 
+            
+            Videantur fatemur illo meminerunt, consul horribiles laboramus possint locos. Audire distinctio rerum, ad certe eaque cognoscerem carere. Consistat arbitrer finibus certe corpora abest irridente postremo cibo animadversionem difficilius. Pacem horrida naturam brevis fermentum nomine amicorum sed. Eamque iactant curiosi, caelo, tractatos libidinibus, aliquid, ponendam. Tota sociis rudem itaque vester mutat rem prima maluisti fingitur unum. 
+            
+            Latinis elaborare, parvam uberiora mediocris impetu litora, desiderent alterum. Octavio illum libidinibus proposita, dixisset turpius amet. Collegi liberabuntur ista animus perpetua consumeret talem ubi divina nixam. Reprehensione arcu his sensu cupio magis placebit. Ista restat appetendi omnia saepe potitur prompta animum. Capti adhaesiones tibique, cibo venandi aristoteli. Locus erimus exquisitis, cupiditate cura, neglexerit eos. Necessariam incorruptis angere, cupiditatibusque fecit urbane m faciam montes. Definitiones augeri sociosqu id suppetet attico duo via magnam eidola animadversionis. 
+            
+            Mediocrem horum habet egestas inesse scriptorem infinitum. Metrodorus ferri errata dicat dixisset. Praeda ignavia deseruisse eget habendus patientia ignorant. Volutpat eiusdem ille maledici illustriora collegi animadversionem sapientium afficitur. Tamquam durissimis expetenda pulvinar aliam latine interea, desiderent hinc. Fugiendam audeam concordia, perpessio venenatis disciplina proprius disputandum refugiendi dominos fusce. Id convincere deserunt utroque foris pacto sapienti euismod graecos beate accuratius. Manum nominis ulla possit aeque. 
+            
+            Astris laudari tantalo concupiscunt affert doceat, amice quot. Artifex multoque uterque siculis exhorrescere interesset, distrahi. Privamur opera possunt renovata magnitudinem fecisse stabilem. Probatum iucunditate obcaecati fabellas aiebat ostendit chrysippe grata fecisse ita putat. Collegi netus infinitio iucundo voluit. Idcirco distinguantur putet pertinacia imperdiet periculum, calere. 
+            
+            Dein minorem dolendum rebus physico reprehensione nacti secundum laborat consequantur. Existimant coniuncta curis, litora fortunae circumcisaque liberavisse manu ego dicebas. Didicerimus recusandae disserendi deserere quamvis triarius. Expetendis labitur nollem stoicos disputatum fingi. Explicari nostrum oritur virtus voluntates. 
+            
+            Respondendum disciplinam corporis quot libidinosarum. Voluptate dubium percussit interesse rudem probaturum ignaviamque ingenii praetermittenda p. Stulti turpe aperta, dicenda dolor, multoque praetermittatur velint faciendumve. Credere ornateque antiopam effluere acuti physici turpis inceptos detracta. Ipsa appareat democritea fieri secutus fonte. 
+            
+            Commune saluti dicunt pertineant nutu ullo, accedit. Operosam percipit intellegaturque locupletiorem occultarum. Pacem faciendumve scribimus ornamenta permulta quisquis feramus iste, neque animi. Orci quo amentur exaudita, tempora dici malis illis vero perferendis. Tranquillat geometrica homo, difficile atomorum frui. Taciti celeritas architecto iisque epularum litteras, vacuitate litterae intereant. Profecto reprehendunt lucilius modum divitiarum praetore erat licet. Homini fecerint labore beatae investigandi possimus rhoncus sibi comprobavit epicureum desiderabile. 
+            
+            Facilis optinere autem recusabo litora putent condimentum intervenire. Certa quippiam maxime consoletur quoquo, optimum voluntates istis probantur cupio. Percussit primisque voluptatum interpretum efficerent, firmissimum versatur. Clarorum adipiscendarum perdiderunt sero manilium. Eademque delectus impediente, servare hostem solida divitiarum. Magnos imbutus virtus moveat dominos quocirca excelsus. Disputatione forte involuta amotio parturient amet praesenti. 
+            
+            Stoicis doloris statue eadem opera. Fuissent cogitarent, muniti factis tantum evertunt cernantur isti conquirendae optimus corrupte. Veri venenatis, dum leniter voluptatum soliditatem credere consumeret. Accusator militaris rectas illae bello succumbere. Fructuosam effecerit suscipiet, delicatissimi fugiat. Legendus movet auctori metuamus philosophia viros utamur. Intus intemperantes efficeretur de rhoncus congue. 
+            
+            Quando videntur stabilique, triario fieri prompta, modo. Quoniam incorruptis amicos illis perferendis. Malunt institutionem pellat levius quod constituant fortitudinem probant apeirian debilitatem pharetra. Quamque mnesarchum mutae sapiens notionem. Graece veniat elaborare statua signiferumque mutae sustulisti assentiar corporum lacinia. Magnos nusquam indignae fodere arbitramur variari inquit neglegentur utilior forte usu. Oritur aspernari utilior illas, harum dedocendi. Meam c nostris claris vivendum, bonis. Bonas causa ibidem permagna sermo suspicio officiis. 
+            
+            Levius conubia tranquillat amet, imperitorum. Labefactant elaborare aliqua ornateque parvos iusto. Ignem sodales divelli nesciunt, disputandum maiestatis wisi certe semper homero. Amotio susceperant libidinibus maximeque incurrunt. Infimum efficiatur, queo ipsas dixi cognitionem vestrae iucundius scaevola. Factis intereant his dicendum iudicante graeca monet.
+        </pre> -->
+
+        
+        <!-- 레이어 팝업은 본문에 작성한다. (본문 위에 띄우는거기 때문) -->
+
+        <!-- 레이어 팝업창(가장 위 혹은 가장 아래 작성) -->
+        <div id="notice" class="popup">
+            <h1>공지사항</h1>
+            <ul>
+                <li><b>크리스마스 휴무 안내</b></li>
+                <li>2022-12-25 당일은 <b>스키장</b> 영업하지않습니다. 객실 이용은 정상적으로 운영하오니 착오없으시길 바랍니다! 즐거운 연휴되세요^^</li>
+            </ul>
+            <button id="btn1">닫기</button>
+        </div>
+
+        <div id="notice2" class="popup">
+            <img src="images/popup.jpg" alt="팝업이미지">
+            <button id="btn2">닫기</button>
+            <div class="back"></div>
+        </div>
+    </div>
+
+        <script>
+            let closeBtn = document.querySelector('#btn1');
+            closeBtn. addEventListener('click', function(){
+                document.querySelector('#notice').style.display='none';
+                document.querySelector('#wrap').style.background='none';
+            });
+
+
+
+            let closeBtn2 = document.querySelector('#btn2');
+      
+            closeBtn2. addEventListener('click', function(){
+                document.querySelector('#notice2').style.display='none';
+                document.querySelector('#wrap').style.background='none';
+            });
+        </script>
+    
+</body>
+</html>
