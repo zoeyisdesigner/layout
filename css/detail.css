@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+h1, h5 {
+    text-align: center;
+    padding: 10px;
+}
+#container {
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(640px, 1fr));
+    grid-gap: 50px 50px;
+}
+.item {
+    position: relative;
+    width: 640px;
+    height: auto;
+    padding: 10px;
+    margin: 20px auto;
+    /* border: 1px solid green; */
+}
+button {
+    background : rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    width: 140px;
+    height: 38px;
+    color: #fff;
+    cursor: pointer;
+
+    transform: perspective(1px) translateZ(0);
+    transition: 0.3s;
+}
+
+button:hover, button:focus, button:active {
+animation: bob 1s ease-in-out 2;
+}
+@keyframes bob {
+25% { 
+    transform: translateY(-10px);
+}
+50% { 
+    transform: translateY(-2px);
+}
+75% { 
+    transform: translateY(-5px);
+}
+100% { 
+    transform: translateY(0px);
+}
+}
+.over {
+    position: relative;
+    left: 20px;
+    bottom: 60px;
+    
+}
+.detail {
+    text-align: justify;
+    line-height: 1.8em;
+    background-color: rgb(248, 248, 248);
+    padding: 25px;
+    display: none;
+}
+.close {
+    position: absolute;
+    left: 30px;
+    top: 360px;
+    padding: 10px;
+    margin: 20px 0;
+}
+.arrow {
+    float: left;
+    width: 20px;
+    padding-right: 3px;
+}
