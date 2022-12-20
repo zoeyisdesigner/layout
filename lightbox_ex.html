@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>라이트박스 예제</title>
+    <link rel="stylesheet" href="css/lightbox_ex.css">
+  </head>
+  <body id="bgImage">
+    <div id="wrap">
+      <header><h1>Zoey's Healing Items</h1></header>
+
+      <aside class="row">
+        <ul>
+          <li>
+            <img src="images/item-1-thumb.jpg" data-src="images/item-1.jpg" class="pic"
+            data-bg="images/item-1-b.jpg">
+            <h3>Hand cream</h3>
+          </li>
+
+          <li>
+            <img src="images/item-2-thumb.jpg" data-src="images/item-2.jpg" class="pic"
+            data-bg="images/item-2-b.jpg">
+            <h3>Vinyl</h3>
+          </li>
+
+          <li>
+            <img src="images/item-3-thumb.jpg" data-src="images/item-3.jpg" class="pic"
+            data-bg="images/item-3-b.jpg">
+            <h3>Pensive Bodhisattva</h3>
+          </li> 
+
+          <li>
+            <img src="images/item-4-thumb.jpg" data-src="images/item-4.jpg" class="pic"
+            data-bg="images/item-4-b.jpg">
+            <h3>Tea</h3>
+          </li>
+
+          <li>
+            <img src="images/item-5-thumb.jpg" data-src="images/item-5.jpg" class="pic"
+            data-bg="images/item-5-b.jpg">
+            <h3>Book</h3>
+          </li>
+
+          <li>
+            <img src="images/item-6-thumb.jpg" data-src="images/item-6.jpg" class="pic" data-bg="images/item-6-b.jpg">
+            <h3>Pajamas</h3>
+          </li> 
+
+        </ul>    
+      </aside>
+
+      <section id="lightbox">
+        <img src="images/item-1.jpg" alt="" id="lightboxImage">
+      </section>
+
+      <footer><p>Design by Zoey. 2022.12</p></footer>
+  </div>
+
+
+
+
+
+    <!-- 스크립트 작성 -->
+    <script>
+      let pics = document.getElementsByClassName('pic');
+      let lightbox = document.getElementById('lightbox');
+      let lightboxImage = document.getElementById('lightboxImage');
+
+
+      let bgImage = document.getElementById('bgImage');
+
+
+
+      for(i=0; i<pics.length; i++){
+        pics[i].addEventListener('click', showLightbox);
+      }
+
+      // lightbox 화면을 출력해라!
+      function showLightbox(){
+        let bigImg = this.getAttribute('data-src'); 
+        lightboxImage.setAttribute('src', bigImg);
+
+        let back = this.getAttribute('data-bg'); 
+        bgImage.setAttribute('src', back);
+
+        bgImage.style.backgroundImage = `url(${back})`;
+      }
+
+     
+  
+
+    </script>
+  </body>
+</html>
