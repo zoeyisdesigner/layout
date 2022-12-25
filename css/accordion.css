@@ -10,7 +10,7 @@
 /*  모바일 우선으로 만들어보기  */
 @media all and (min-width:300px) {
     body {
-        background: url(../img/bg_1.jpg) no-repeat left top fixed;
+        background: url(../images/bg_1.jpg) no-repeat left top fixed;
         background-size: cover;
     }
 }
@@ -56,19 +56,19 @@ article {
     box-shadow: 3px 3px 10px 8px rgba(22, 22, 22, 0.3);
 }
 #planet1 {
-    background: url(../img/planet_1.jpg) no-repeat;
+    background: url(../images/planet_1.jpg) no-repeat;
     background-size: cover;
 }
 #planet2 {
-    background: url(../img/planet_2.jpg) no-repeat;
+    background: url(../images/planet_2.jpg) no-repeat;
     background-size: cover;
 }
 #planet3 {
-    background: url(../img/planet_3.jpg) no-repeat;
+    background: url(../images/planet_3.jpg) no-repeat;
     background-size: cover;
 }
 #planet4 {
-    background: url(../img/planet_4.jpg) no-repeat;
+    background: url(../images/planet_4.jpg) no-repeat;
     background-size: cover;
 }
 .aco {
@@ -121,7 +121,7 @@ footer{
 
 @media all and (min-width:800px) {
     body {
-        background: url(../img/bg_2.jpg) no-repeat left top fixed;
+        background: url(../images/bg_2.jpg) no-repeat left top fixed;
         background-size: cover;
     }
 
@@ -154,7 +154,7 @@ footer{
 }
 @media all and (min-width:1300px) {
     body {
-        background: url(../img/bg_3.jpg) no-repeat left top fixed;
+        background: url(../images/bg_3.jpg) no-repeat left top fixed;
         background-size: cover;
     }
 }
