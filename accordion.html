@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/accordion.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/accordion.js"></script>
+    <title>아코디언 효과</title>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1>Zoey with coding</h1>
+        </header>
+
+        <section>
+            <article>
+                <div id="planet1" class="img"> <!--이미지 삽입--></div>
+                <p class="btn">
+                    <a href="#">HTML</a>
+                    <ul id="title1" class="aco">
+                        <li><a href="#">+ HTML</a></li>
+                        <li><a href="#">+ HTML5</a></li>
+                    </ul>
+                </p>
+            </article>
+
+            <article>
+                <div id="planet2" class="img"> <!--이미지 삽입--></div>
+                <p class="btn">
+                    <a href="#">CSS</a>
+                    <ul id="title2" class="aco">
+                        <li><a href="#">+ Animation</a></li>
+                        <li><a href="#">+ Transfom</a></li>
+                        <li><a href="#">+ Transition</a></li>
+                        <li><a href="#">+ Flex & Grid</a></li>
+                    </ul>
+                </p>
+            </article>
+            <article>
+                <div id="planet3" class="img"> <!--이미지 삽입--></div>
+                <p class="btn">
+                    <a href="#">JavaScript</a>
+                    <ul id="title3" class="aco">
+                        <li><a href="#">+ JavaScript</a></li>
+                        <li><a href="#">+ Browser</a></li>
+                        <li><a href="#">+ Dom</a></li>
+                    </ul>
+                </p>
+            </article>
+
+            <article>
+                <div id="planet4" class="img"> <!--이미지 삽입--></div>
+                <p class="btn">
+                    <a href="#">jQuery</a>
+                    <ul id="title4" class="aco">
+                        <li><a href="#">+ jQuery</a></li>
+                        <li><a href="#">+ Menu</a></li>
+                    </ul>
+                </p>
+            </article>
+
+            
+        </section>
+
+        <footer><p>2022 @ design by zoey</p></footer>
+
+    </div>
+
+
+    
+    <script>
+        $(function(){
+            $('.btn a').on('click', function(){
+                $('.btn').next('.aco').filter(':visible').slideUp();   // filter 숨겨라
+
+                $(this).parent().next().slideDown();
+                // 기본 이벤트를 차단하여 이동을 막는다.
+                return false; // 항상 넣어주는것이 좋다! 본래기능을 막아주는 것
+            });
+        });
+    </script>
+</body>
+</html>
