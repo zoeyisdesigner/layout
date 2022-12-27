@@ -74,7 +74,7 @@ ul.bxslider {
   box-shadow: 0 0 5px #ccc;
   border: 1px dotted rgb(204, 147, 130);
   border-radius: 20px;
-  padding: 8px;
+  padding: 10px 9px;
   background: rgb(227, 198, 188);
 }
 .bx-wrapper .bx-pager,
