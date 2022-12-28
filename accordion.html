@@ -74,9 +74,9 @@
     <script>
         $(function(){
             $('.btn a').on('click', function(){
-                $('.btn').next('.aco').filter(':visible').slideUp();   // filter 숨겨라
+                $('.btn').next('.aco').filter(':visible').slideUp(300);   // filter 숨겨라
 
-                $(this).parent().next().slideDown();
+                $(this).parent().next().slideDown(300);
                 // 기본 이벤트를 차단하여 이동을 막는다.
                 return false; // 항상 넣어주는것이 좋다! 본래기능을 막아주는 것
             });
