@@ -124,7 +124,7 @@ footer{
 
 @media all and (min-width:800px) {
     body {
-        background: url(../img/bg_3.jpg) no-repeat left top fixed;
+        background: url(../images/bg_3.jpg) no-repeat left top fixed;
         background-size: cover;
     }
     section {
@@ -136,7 +136,7 @@ footer{
 
 @media all and (min-width:1200px) {
     body {
-        background: url(../img/bg_2.jpg) no-repeat left top fixed;
+        background: url(../images/bg_2.jpg) no-repeat left top fixed;
         background-size: cover;
     }
 
