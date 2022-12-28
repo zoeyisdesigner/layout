@@ -122,22 +122,32 @@ footer{
 }
 
 
+@media all and (min-width:800px) {
+    body {
+        background: url(../img/bg_3.jpg) no-repeat left top fixed;
+        background-size: cover;
+    }
+    section {
+        width: 45%;
+        /* border: 1px solid red; */
+    }
+}
+
 
 @media all and (min-width:1200px) {
     body {
-        background: url(../images/bg_2.jpg) no-repeat left top fixed;
+        background: url(../img/bg_2.jpg) no-repeat left top fixed;
         background-size: cover;
     }
 
     section {
-        width: 100%;
+        width: 90%;
         margin: 0 auto;
+        position: relative;
     }
     article {
-        width: 220px;
+        width: 25%;
         float: left;
-        margin: 100px 30px;
-        /* border: 1px solid yellow; */
     }
     .img {
         width: 60px;
@@ -157,10 +167,4 @@ footer{
         padding: 10px 0 5px 70px;
         background: rgba(255, 255, 255, 0.2);
     } 
-}
-@media all and (min-width:1600px) {
-    body {
-        background: url(../images/bg_3.jpg) no-repeat left top fixed;
-        background-size: cover;
-    }
 }
